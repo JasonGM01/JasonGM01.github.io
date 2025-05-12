@@ -1,6 +1,10 @@
+"use client";
+
 import React from 'react';
+import {useRouter} from 'next/navigation';
 
 export default function Experiences(){
+    const router = useRouter();
     return (
         <div className="p-1">
             <h5 className="mb-2 text-m font-bold tracking-tight">Experiences</h5>
@@ -14,6 +18,7 @@ export default function Experiences(){
                     As a Drink Buyer, I controlled the flow of products and set prices.
                     As IT Support, I calibrated, maintained, and troubleshot card reader machines and computers.
                 </p>
+                <button type="button" onClick={() => router.push('/')}>Home</button><br />
             </div>
         </div>
     );
