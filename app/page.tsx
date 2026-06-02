@@ -1,9 +1,10 @@
 import Link from 'next/link';
+import './globals.css';
 
 export default function Home() {
   return (
-    <div className="main">
-      <strong>Main Page</strong>
+    <div className="main-page">
+      <strong className="main-text">Main Page</strong>
       <ul className="link-column">
         <p>
           <Link className="education-button" href="./education">Education</Link>

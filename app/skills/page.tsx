@@ -1,10 +1,11 @@
 import Link from 'next/link';
+import '../globals.css';
 
-export default function Skills(){
-    return(
+export default function Skills() {
+    return (
         <div className="skills-page">
-            <strong>Skills:</strong>
             <ul className="skills-row">
+                <strong>Skills:</strong>
                 <ul className="card">
                     <strong>Programming Languages</strong>
                     <p>C++</p>
@@ -51,10 +52,11 @@ export default function Skills(){
                     <p>Electronic Diagnosis</p>
                     <p>Remove and Replace</p>
                 </ul>
-            </ul>
-            <br></br>
 
-            <Link className="home-button" href="/">Home</Link>
+                <br></br>
+
+                <Link className="home-button" href="/">Home</Link>
+            </ul>
         </div>
     )
 }

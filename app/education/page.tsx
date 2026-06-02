@@ -1,35 +1,41 @@
 import Link from 'next/link';
+import '../globals.css';
 
 export default function Education() {
     return (
-        <div className="Education-page">
-            <ul>
+        <div className="education-page">
+            <ul className="schools">
                 <strong>Schools:</strong>
-                <p>California State University, Dominguez Hills</p>
-                <p>A.K.A. CSUDH</p>
-                <strong>Courses: </strong>
-                <ul>
-                    <p>Data Structures</p>
-                    <p>Algorithms</p>
-                    <p>Software Engineering</p>
-                    <p>Software Development</p>
-                    <p>C Programming</p>
-                    <p>Programming Languages</p>
-                </ul>
+                <div className="school-card">
+                    <p>California State University, Dominguez Hills</p>
+                    <p>A.K.A. CSUDH</p>
+                    <div className="courses">
+                        <strong>Courses: </strong>
+                        <p>Data Structures</p>
+                        <p>Algorithms</p>
+                        <p>Software Engineering</p>
+                        <p>Software Development</p>
+                        <p>C Programming</p>
+                        <p>Programming Languages</p>
+                    </div>
+                </div>
                 <br></br>
 
-                <p>El Camino Community College</p>
-                <p>A.K.A. ECC</p>
-                <strong>Courses: </strong>
-                <ul>
-                    <p>Data Structures and Algorithms</p>
-                    <p>Computer Science 1</p>
-                    <p>Computer Science 2</p>
-                    <p>Discrete Math</p>
-                </ul>
+                <div className="school-card">
+                    <p>El Camino Community College</p>
+                    <p>A.K.A. ECC</p>
+                    <div className="courses">
+                        <strong>Courses: </strong>
+                        <p>Data Structures and Algorithms</p>
+                        <p>Computer Science 1</p>
+                        <p>Computer Science 2</p>
+                        <p>Discrete Math</p>
+                    </div>
+                </div>
+
+                <br></br>
+                <Link className="home-button" href="/">Home</Link>
             </ul>
-            <br></br>
-            <Link className="home-button" href="/">Home</Link>
         </div>
     )
 }

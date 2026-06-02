@@ -24,3 +24,97 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+/*Home Page*/
+.main-page{
+  text-align: center;
+}
+
+.main{
+  display:block;
+  background-color: #ffffff;
+  padding: 8px 16px;
+  border-radius: 6px;
+  color: #0a0a0a;
+}
+
+/*Education*/
+.education-page{
+  display: flex;
+  text-align: center;
+}
+
+.schools{
+  justify-content: center;
+}
+
+.school-card{
+  background-color:#ff0000;
+  text-align: center;
+  color: #00fcef;
+  border-radius: 10px;
+  padding: 6px 6px 6px 6px;
+}
+
+.courses{
+  text-align: left;
+}
+
+/*Skills*/
+.skills-page{
+  display: flex;
+  text-align: center;
+}
+
+/*Projects*/
+.projects-page{
+  display: flex;
+  text-align: center;
+}
+
+/*Buttons and Links*/
+.home-button{
+  display: inline-block;
+  background-color: #ffffff;
+  padding: 8px 16px;
+  border-radius: 6px;
+  color: #0a0a0a;
+}
+
+.home-button:hover{
+  text-decoration: underline;
+}
+
+.education-button{
+  display:block;
+  background-color: #ff0000;
+  padding: 8px 16px;
+  border-radius: 6px;
+  color: #00fcef;
+}
+
+.skill-button{
+  display:block;
+  background-color: #0004ff;
+  padding: 8px 16px;
+  border-radius: 6px;
+  color: #fffb00;
+}
+
+.project-button{
+  display:block;
+  background-color: #09ff00;
+  padding: 8px 16px;
+  border-radius: 6px;
+  color: #ff00dd;
+}
+
+.education-button:hover,
+.skill-button:hover,
+.project-button:hover{
+  text-decoration: underline;
+}
+
+.card{
+  text-align: left;
+}

@@ -1,8 +1,10 @@
 import Link from 'next/link';
+import '../globals.css';
 
-export default function Projects(){
-        return (
-            <div className="projects-page">
+export default function Projects() {
+    return (
+        <div className="projects-page">
+            <ul className="projects">
                 <strong>Projects:</strong>
                 <ul className="card">
                     <strong>Java Projects</strong>
@@ -32,6 +34,7 @@ export default function Projects(){
                 <br></br>
 
                 <Link className="home-button" href="/">Home</Link>
-            </div>
-        )
+            </ul>
+        </div>
+    )
 }
