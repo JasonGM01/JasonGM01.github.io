@@ -1,40 +1,41 @@
 import Link from 'next/link';
 import '../globals.css';
 
-export default function Projects() {
+const Projects = () => {
     return (
         <div className="projects-page">
-            <ul className="projects">
-                <strong>Projects:</strong>
-                <ul className="card">
+            <strong>Projects:</strong>
+            
+            <ul className="projects"> 
+                <div className="project-card">
                     <strong>Java Projects</strong>
                     <p>Paint Cost Calculator</p>
                     <p>Amusement Park Simulator</p>
                     <p>Infix To Postfix Converter</p>
-                </ul>
+                </div>
                 <br></br>
 
-                <ul className="card">
+                <div className="project-card">
                     <strong>Web/Group Projects</strong>
                     <p>Comm Share</p>
                     <p>Algo Tester</p>
                     <p>Portfolio Website</p>
                     <p>Code Astra</p>
                     <p>Plantaer (recently started)</p>
-                    <p>CSUDH - Storefront</p>
-                </ul>
+                    <p>Storefront - CSUDH</p>
+                </div>
                 <br></br>
 
-                <ul className="card">
+                <div className="project-card">
                     <strong>Backend</strong>
                     <p>Legacy Car Care</p>
                     <p>Comm Share (Again)</p>
                     <p>StoreFront (Again)</p>
-                </ul>
-                <br></br>
-
-                <Link className="home-button" href="/">Home</Link>
+                </div>
+                <br></br>   
             </ul>
+            <Link className="home-button" href="/">Home</Link>
         </div>
     )
 }
+export default Projects;

@@ -1,41 +1,38 @@
 import Link from 'next/link';
 import '../globals.css';
 
-export default function Education() {
+const Education = () => {
     return (
         <div className="education-page">
+            <strong>Schools:</strong>
             <ul className="schools">
-                <strong>Schools:</strong>
                 <div className="school-card">
-                    <p>California State University, Dominguez Hills</p>
+                    <strong>California State University, Dominguez Hills</strong>
                     <p>A.K.A. CSUDH</p>
-                    <div className="courses">
-                        <strong>Courses: </strong>
-                        <p>Data Structures</p>
-                        <p>Algorithms</p>
-                        <p>Software Engineering</p>
-                        <p>Software Development</p>
-                        <p>C Programming</p>
-                        <p>Programming Languages</p>
-                    </div>
+                    <strong>Courses: </strong>
+                    <p>Data Structures</p>
+                    <p>Algorithms</p>
+                    <p>Software Engineering</p>
+                    <p>Software Development</p>
+                    <p>C Programming</p>
+                    <p>Programming Languages</p>
                 </div>
                 <br></br>
 
                 <div className="school-card">
-                    <p>El Camino Community College</p>
+                    <strong>El Camino Community College</strong>
                     <p>A.K.A. ECC</p>
-                    <div className="courses">
-                        <strong>Courses: </strong>
-                        <p>Data Structures and Algorithms</p>
-                        <p>Computer Science 1</p>
-                        <p>Computer Science 2</p>
-                        <p>Discrete Math</p>
-                    </div>
-                </div>
+                    <strong>Courses: </strong>
+                    <p>Data Structures and Algorithms</p>
+                    <p>Computer Science 1</p>
+                    <p>Computer Science 2</p>
+                    <p>Discrete Math</p>
 
+                </div>
                 <br></br>
-                <Link className="home-button" href="/">Home</Link>
             </ul>
+            <Link className="home-button" href="/">Home</Link>
         </div>
     )
 }
+export default Education;

@@ -5,13 +5,6 @@
   --foreground: #171717;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
 @media (prefers-color-scheme: dark) {
   :root {
     --background: #0a0a0a;
@@ -38,83 +31,56 @@ body {
   color: #0a0a0a;
 }
 
-/*Education*/
-.education-page{
+.education-page,
+.skills-page,
+.projects-page,
+.contact-page{
   display: flex;
+  flex-direction: column;
+  padding: 5px;
   text-align: center;
+  align-items: center;
 }
 
-.schools{
-  justify-content: center;
-}
-
-.school-card{
-  background-color:#ff0000;
+.school-card,
+.skill-card,
+.project-card,
+.contact-card{
+  border:2px solid #ff0000;
   text-align: center;
-  color: #00fcef;
+  color: #ffffff;
   border-radius: 10px;
   padding: 6px 6px 6px 6px;
+  margin: 6px;
 }
 
-.courses{
-  text-align: left;
-}
-
-/*Skills*/
-.skills-page{
+.schools,
+.skills,
+.projects,
+.contacts{
   display: flex;
-  text-align: center;
+  flex-direction: row;
 }
 
-/*Projects*/
-.projects-page{
-  display: flex;
-  text-align: center;
-}
-
-/*Buttons and Links*/
-.home-button{
-  display: inline-block;
-  background-color: #ffffff;
-  padding: 8px 16px;
-  border-radius: 6px;
-  color: #0a0a0a;
-}
-
-.home-button:hover{
-  text-decoration: underline;
-}
-
-.education-button{
+.home-button,
+.education-button,
+.skill-button,
+.project-button,
+.contact-button{
   display:block;
-  background-color: #ff0000;
+  border: 2px solid #ff0000;
+  background-color: #0a0a0a;
   padding: 8px 16px;
   border-radius: 6px;
-  color: #00fcef;
-}
-
-.skill-button{
-  display:block;
-  background-color: #0004ff;
-  padding: 8px 16px;
-  border-radius: 6px;
-  color: #fffb00;
-}
-
-.project-button{
-  display:block;
-  background-color: #09ff00;
-  padding: 8px 16px;
-  border-radius: 6px;
-  color: #ff00dd;
+  margin: 8px;
+  color: #ffffff;
 }
 
 .education-button:hover,
 .skill-button:hover,
-.project-button:hover{
+.project-button:hover,
+.contact-button:hover,
+.home-button:hover{
   text-decoration: underline;
-}
-
-.card{
-  text-align: left;
+  background-color: #ff0000;
 }
