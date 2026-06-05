@@ -18,7 +18,6 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
-/*Home Page*/
 .main-page{
   text-align: center;
 }
@@ -83,4 +82,14 @@ body {
 .home-button:hover{
   text-decoration: underline;
   background-color: #ff0000;
+}
+
+.navbar-layout{
+  display: flex;
+  flex-direction: row;
+  justify-content: end;
+}
+
+.navi{
+  background-color: #ffffff;
 }

@@ -1,61 +1,63 @@
 import Link from 'next/link';
-import '../globals.css';
+import Navbar from '../components/navbar/page';
 
 const Skills = () => {
     return (
-        <div className="skills-page">
-            <strong>Skills:</strong>
+        <div>
+            <Navbar />
+            <div className="skills-page">
+                <strong>Skills:</strong>
 
-            <ul className="skills">   
-                <div className="skill-card">
-                    <strong>Programming Languages</strong>
-                    <p>C++</p>
-                    <p>Java</p>
-                    <p>Python</p>
-                    <p>Dart</p>
-                    <p>Javascript</p>
-                    <p>CSS</p>
-                </div>
-                <br></br>
+                <ul className="skills">
+                    <div className="skill-card">
+                        <strong>Programming Languages</strong>
+                        <p>C++</p>
+                        <p>Java</p>
+                        <p>Python</p>
+                        <p>Dart</p>
+                        <p>Javascript</p>
+                        <p>CSS</p>
+                    </div>
+                    <br></br>
 
-                <div className="skill-card">
-                    <strong>Frameworks</strong>
-                    <p>React</p>
-                    <p>node.js</p>
-                    <p>next.js</p>
-                    <p>Flutter</p>
-                </div>
-                <br></br>
+                    <div className="skill-card">
+                        <strong>Frameworks</strong>
+                        <p>React</p>
+                        <p>node.js</p>
+                        <p>next.js</p>
+                        <p>Flutter</p>
+                    </div>
+                    <br></br>
 
-                <div className="skill-card">
-                    <strong>Cloud / Database</strong>
-                    <p>Firebase Firestore</p>
-                    <p>Supabase</p>
-                    <p>MongoDB</p>
-                    <p>Docker</p>
-                </div>
-                <br></br>
+                    <div className="skill-card">
+                        <strong>Cloud / Database</strong>
+                        <p>Firebase Firestore</p>
+                        <p>Supabase</p>
+                        <p>MongoDB</p>
+                        <p>Docker</p>
+                    </div>
+                    <br></br>
 
-                <div className="skill-card">
-                    <strong>Speaking Languages</strong>
-                    <p>Spanish (Fluent)</p>
-                    <p>English (Fluent)</p>
-                    <p>Japanese (Conversational)</p>
-                    <p>German (not too well)</p>
-                </div>
-                <br></br>
+                    <div className="skill-card">
+                        <strong>Speaking Languages</strong>
+                        <p>Spanish (Fluent)</p>
+                        <p>English (Fluent)</p>
+                        <p>Japanese (Conversational)</p>
+                        <p>German (not too well)</p>
+                    </div>
+                    <br></br>
 
-                <div className="skill-card">
-                    <strong>Automotive</strong>
-                    <p>Engine Performance</p>
-                    <p>Drivetrains</p>
-                    <p>Suspensions</p>
-                    <p>Electronic Diagnosis</p>
-                    <p>Remove and Replace</p>
-                </div>
-                <br></br>      
-            </ul> 
-            <Link className="home-button" href="/">Home</Link>
+                    <div className="skill-card">
+                        <strong>Automotive</strong>
+                        <p>Engine Performance</p>
+                        <p>Drivetrains</p>
+                        <p>Suspensions</p>
+                        <p>Electronic Diagnosis</p>
+                        <p>Remove and Replace</p>
+                    </div>
+                    <br></br>
+                </ul>
+            </div>
         </div>
     )
 }

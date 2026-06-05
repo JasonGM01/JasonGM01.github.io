@@ -4,8 +4,8 @@ import './globals.css';
 export default function Home() {
   return (
     <div className="main-page">
-      <h1>Welcome to my page!</h1>
       <NavBar />
+      <h1>This is a Home Page</h1>
     </div>
   );
 }
