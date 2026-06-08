@@ -1,64 +1,79 @@
-import Link from 'next/link';
-import Navbar from '../components/navbar/page';
+type skill = {
+    "_id": number,
+    "skill": string,
+    "level": string,
+    "type": string
+}
 
-const Skills = () => {
+export default async function Skills() {
+    const res = await fetch("http://localhost:3000/api/skills", { cache: "no-store" });
+    const skills = await res.json();
+    const progSkills = skills.filter((skill: skill) => skill.type === "Programming");
+    const frameSkills = skills.filter((skill: skill) => skill.type === "Framework");
+    const DCSkills = skills.filter((skill: skill) => skill.type === "Database" || skill.type === "Cloud");
+    const speakSkills = skills.filter((skill: skill) => skill.type === "Speaking");
+    const autoSkills = skills.filter((skill: skill) => skill.type === "Automotive");
+
     return (
         <div>
-            <Navbar />
             <div className="skills-page">
-                <strong>Skills:</strong>
-
                 <ul className="skills">
                     <div className="skill-card">
-                        <strong>Programming Languages</strong>
-                        <p>C++</p>
-                        <p>Java</p>
-                        <p>Python</p>
-                        <p>Dart</p>
-                        <p>Javascript</p>
-                        <p>CSS</p>
+                        <strong>Programming</strong>
+                        {progSkills.map((skill: skill) =>
+                            <div key={skill._id} >
+                                <p>{skill.skill}</p>
+                                <p>Level: {skill.level}</p>
+                                <br />
+                            </div>
+                        )}
                     </div>
-                    <br></br>
 
                     <div className="skill-card">
-                        <strong>Frameworks</strong>
-                        <p>React</p>
-                        <p>node.js</p>
-                        <p>next.js</p>
-                        <p>Flutter</p>
+                        <strong>Framework</strong>
+                        {frameSkills.map((skill: skill) =>
+                            <div key={skill._id}>
+                                <p>{skill.skill}</p>
+                                <p>Level: {skill.level}</p>
+                                <br/>
+                            </div>
+                        )}
                     </div>
-                    <br></br>
+
+                      <div className="skill-card">
+                        <strong>Database/Cloud</strong>
+                        {DCSkills.map((skill: skill) => 
+                            <div key={skill._id}>
+                                <p>{skill.skill}</p>
+                                <p>Level: {skill.level}</p>
+                                <br/>    
+                            </div>
+                        )}
+                      </div>
 
                     <div className="skill-card">
-                        <strong>Cloud / Database</strong>
-                        <p>Firebase Firestore</p>
-                        <p>Supabase</p>
-                        <p>MongoDB</p>
-                        <p>Docker</p>
+                        <strong>Speaking</strong>
+                        {speakSkills.map((skill: skill) => 
+                            <div key={skill._id}>
+                                <p>{skill.skill}</p>
+                                <p>Level: {skill.level}</p>
+                                <br/>
+                            </div>
+                        )}
                     </div>
-                    <br></br>
-
-                    <div className="skill-card">
-                        <strong>Speaking Languages</strong>
-                        <p>Spanish (Fluent)</p>
-                        <p>English (Fluent)</p>
-                        <p>Japanese (Conversational)</p>
-                        <p>German (not too well)</p>
-                    </div>
-                    <br></br>
 
                     <div className="skill-card">
                         <strong>Automotive</strong>
-                        <p>Engine Performance</p>
-                        <p>Drivetrains</p>
-                        <p>Suspensions</p>
-                        <p>Electronic Diagnosis</p>
-                        <p>Remove and Replace</p>
+                        {autoSkills.map((skill: skill) =>
+                            <div key={skill._id}>
+                                <p>{skill.skill}</p>
+                                <p>Level: {skill.level}</p>
+                                <br/>
+                            </div>
+                        )}
                     </div>
-                    <br></br>
                 </ul>
             </div>
         </div>
     )
 }
-export default Skills;

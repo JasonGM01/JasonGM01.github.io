@@ -1,25 +1,27 @@
-import Navbar from '../components/navbar/page';
+type contact ={
+    "_id": number,
+    "contact": string,
+    "type": string
+}
 
-const Contact = () => {
+export default async function Contact(){
+    const res = await fetch("http://localhost:3000/api/contacts", {cache: "no-store"});
+    const contacts = await res.json();
     return (
         <div>
-            <Navbar />
             <div className="contact-page">
                 <strong>You can contact me here:</strong>
-
                 <ul className="contacts">
-                    <div className="contact-card">
-                        <strong>Email:</strong>
-                        <div>jasongonzalezmolina2701@gmail.com</div>
-                    </div>
-
-                    <div className="contact-card">
-                        <strong>Phone:</strong>
-                        <div>+1(310)650-0042</div>
-                    </div>
+                    {contacts.map((contact: contact) => 
+                        <div key={contact._id} className="contact-card">
+                            <p><strong>{contact.type}</strong></p>
+                            <p>{contact.type === "Linkedin" 
+                            ? (<a href={contact.contact}>{contact.contact}</a>)
+                            : <span>{contact.contact}</span>}</p>
+                        </div>
+                    )}
                 </ul>
             </div>
         </div>
     );
 }
-export default Contact;

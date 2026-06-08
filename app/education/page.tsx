@@ -1,40 +1,31 @@
-import Link from 'next/link';
-import Navbar from '../components/navbar/page';
+type education = {
+"_id": number,
+"school": string,
+"accro": string,
+"courses": string[],
+}
 
-const Education = () => {
+export default async function Education() {
+    const res = await fetch("http://localhost:3000/api/education", { cache: "no-store" })
+    const schools = await res.json();
     return (
         <div>
-            <Navbar />
             <div className="education-page">
                 <strong>Education:</strong>
                 <ul className="schools">
-                    <div className="school-card">
-                        <strong>California State University, Dominguez Hills</strong>
-                        <p>A.K.A. CSUDH</p>
-                        <strong>Courses: </strong>
-                        <p>Data Structures</p>
-                        <p>Algorithms</p>
-                        <p>Software Engineering</p>
-                        <p>Software Development</p>
-                        <p>C Programming</p>
-                        <p>Programming Languages</p>
-                    </div>
-                    <br></br>
-
-                    <div className="school-card">
-                        <strong>El Camino Community College</strong>
-                        <p>A.K.A. ECC</p>
-                        <strong>Courses: </strong>
-                        <p>Data Structures and Algorithms</p>
-                        <p>Computer Science 1</p>
-                        <p>Computer Science 2</p>
-                        <p>Discrete Math</p>
-
-                    </div>
-                    <br></br>
+                    {schools.map((education: education) =>
+                        <div key={education._id} className="school-card">
+                            <p><strong>{education.school}</strong></p>
+                            <p>A.K.A {education.accro}</p>
+                            <p><strong>Courses</strong></p>
+                            <div>{education.courses.map((course: string) =>
+                                <p key={course}>{course}</p>
+                            )}
+                            </div>
+                        </div>
+                    )}
                 </ul>
             </div>
         </div>
     )
 }
-export default Education;
