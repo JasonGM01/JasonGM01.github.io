@@ -1,7 +1,7 @@
 import { NextResponse } from "next/server";
 import { getDB } from "@/lib/mongodb";
 
-//get all contacts
+//get all hobbies
 export async function GET(){
     const db = await getDB();
 
@@ -13,7 +13,7 @@ export async function GET(){
     return NextResponse.json(hobbies);
 }
 
-//create new contact
+//create new hobby
 export async function POST(req: Request){
      const body = await req.json();
 

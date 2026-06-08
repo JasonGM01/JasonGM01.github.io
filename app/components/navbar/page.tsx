@@ -38,6 +38,12 @@ export default function Navbar() {
                         <Link href="/contact"><strong>Contact Me</strong></Link>
                     </li>
                 )}
+
+                {pathName !== '/users' && (
+                    <li className="user-button">
+                        <Link href="/users"><strong>Login/Signup</strong></Link>
+                    </li>
+                )}
             </ul>
         </nav>
     )

@@ -34,7 +34,10 @@ body {
 .skills-page,
 .projects-page,
 .contact-page,
-.hobbies-page{
+.hobbies-page,
+.users-page,
+.signup-page,
+.login-page{
   display: flex;
   flex-direction: column;
   padding: 5px;
@@ -55,11 +58,21 @@ body {
   margin: 6px;
 }
 
+.user-card{
+  border:2px solid #ff0000;
+  text-align: center;
+  color: #ffffff;
+  border-radius: 10px;
+  padding: 6px 6px 6px 6px;
+  margin: 6px;
+}
+
 .schools,
 .skills,
 .projects,
 .contacts,
-.hobbies{
+.hobbies,
+.users{
   display: flex;
   flex-direction: row;
 }
@@ -68,7 +81,8 @@ body {
 .education-button,
 .skill-button,
 .project-button,
-.contact-button{
+.contact-button,
+.user-button{
   display:block;
   border: 2px solid #ff0000;
   background-color: #0a0a0a;
@@ -82,7 +96,8 @@ body {
 .skill-button:hover,
 .project-button:hover,
 .contact-button:hover,
-.home-button:hover{
+.home-button:hover,
+.user-button:hover{
   text-decoration: underline;
   background-color: #ff0000;
 }
