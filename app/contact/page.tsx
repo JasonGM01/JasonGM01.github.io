@@ -8,7 +8,6 @@ export default async function Contact(){
     const res = await fetch("http://localhost:3000/api/contacts", {cache: "no-store"});
     const contacts = await res.json();
     return (
-        <div>
             <div className="contact-page">
                 <strong>You can contact me here:</strong>
                 <ul className="contacts">
@@ -22,6 +21,5 @@ export default async function Contact(){
                     )}
                 </ul>
             </div>
-        </div>
     );
 }

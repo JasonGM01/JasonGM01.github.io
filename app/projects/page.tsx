@@ -15,7 +15,6 @@ export default async function Projects() {
     const nodeProjects = projects.filter((project: project) => project.type.includes("Node"));
     
     return (
-        <div>
             <div className="projects-page">
                 <ul className="projects">
                     <div className="project-card">
@@ -57,11 +56,9 @@ export default async function Projects() {
                                 <br/><br/>
                             </div>
                         )}
-
                     </div>
                     <br></br>
                 </ul>
             </div>
-        </div>
     )
 }

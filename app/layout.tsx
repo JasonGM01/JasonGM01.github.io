@@ -29,7 +29,11 @@ export default function RootLayout({
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
       
-      <body className="min-h-full flex flex-col"><NavBar />{children}</body>
+      <body className="min-h-full flex flex-col">
+        <NavBar />
+        {children}
+        <p className="trademark">2026 Jason Gonzalez Molina™</p>
+      </body>
     </html>
   );
 }

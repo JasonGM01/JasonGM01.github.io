@@ -33,7 +33,8 @@ body {
 .education-page,
 .skills-page,
 .projects-page,
-.contact-page{
+.contact-page,
+.hobbies-page{
   display: flex;
   flex-direction: column;
   padding: 5px;
@@ -44,7 +45,8 @@ body {
 .school-card,
 .skill-card,
 .project-card,
-.contact-card{
+.contact-card,
+.hobby-card{
   border:2px solid #ff0000;
   text-align: center;
   color: #ffffff;
@@ -56,7 +58,8 @@ body {
 .schools,
 .skills,
 .projects,
-.contacts{
+.contacts,
+.hobbies{
   display: flex;
   flex-direction: row;
 }
@@ -92,4 +95,8 @@ body {
 
 .navi{
   background-color: #ffffff;
+}
+
+.trademark{
+  text-align: center;
 }

@@ -9,7 +9,6 @@ export default async function Education() {
     const res = await fetch("http://localhost:3000/api/education", { cache: "no-store" })
     const schools = await res.json();
     return (
-        <div>
             <div className="education-page">
                 <strong>Education:</strong>
                 <ul className="schools">
@@ -26,6 +25,5 @@ export default async function Education() {
                     )}
                 </ul>
             </div>
-        </div>
     )
 }
