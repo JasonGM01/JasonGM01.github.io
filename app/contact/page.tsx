@@ -1,7 +1,7 @@
 import { redirect } from 'next/navigation';
-import { getSession } from '@/lib/session';
+import { getSession } from '../../lib/session';
 import { ContactAdmin } from '../admin/page';
-import { getDB } from '@/lib/mongodb';
+import { getDB } from '../../lib/mongodb';
 
 export default async function Contact() {
     const session = await getSession();

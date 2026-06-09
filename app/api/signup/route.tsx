@@ -1,6 +1,6 @@
 import { NextResponse } from "next/server";
 import bcrypt from "bcryptjs";
-import { getDB } from "@/lib/mongodb";
+import { getDB } from "../../../lib/mongodb";
 
 //create new user
 export async function POST(req: Request){

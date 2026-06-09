@@ -2,6 +2,14 @@
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
 
+export default function Admin(){
+    return (
+        <div>
+            <p>Admin</p>
+        </div>
+    );
+}
+
 export function ContactAdmin() {
     const router = useRouter();
     const [contact, setContact] = useState("");
@@ -228,6 +236,56 @@ export function EducationAdmin() {
                     value={date}
                     onChange={(e) => setDate(e.target.value)}
                     placeholder="date"
+                /><br />
+
+                <button className="submit-button" type="submit">Add</button>
+            </form>
+            {message && <p>{message}</p>}
+        </div>
+    );
+}
+
+export function HobbyAdmin() {
+    const router = useRouter();
+    const [hobby, setHobby] = useState("");
+    const [type, setType] = useState("");
+    const [message, setMessage] = useState("");
+
+    async function handleSubmit(e: React.FormEvent) {
+        e.preventDefault();
+
+        const res = await fetch("/api/hobbies",
+            {
+                method: "POST",
+                headers:
+                {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify({ hobby, type })
+            });
+        const data = await res.json();
+
+        if (data) {
+            setMessage("Failed to add hobby")
+        }
+
+        setMessage("Added successfully");
+        router.refresh();
+    }
+
+    return (
+        <div className="admin-stuff">
+            <form onSubmit={handleSubmit}>
+                <input className="hobby-card"
+                    value={hobby}
+                    onChange={(e) => setHobby(e.target.value)}
+                    placeholder="hobby"
+                /><br />
+
+                <input className="hobby-card"
+                    value={type}
+                    onChange={(e) => setType(e.target.value)}
+                    placeholder="type"
                 /><br />
 
                 <button className="submit-button" type="submit">Add</button>

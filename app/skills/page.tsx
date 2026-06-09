@@ -1,6 +1,6 @@
-import { getSession } from '@/lib/session';
+import { getSession } from '../../lib/session';
 import { SkillAdmin } from '../admin/page';
-import { getDB } from '@/lib/mongodb';
+import { getDB } from '../../lib/mongodb';
 
 export default async function Skills() {
     const session = await getSession();

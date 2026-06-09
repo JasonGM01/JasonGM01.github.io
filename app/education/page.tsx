@@ -1,5 +1,5 @@
-import { getDB } from "@/lib/mongodb";
-import { getSession } from "@/lib/session";
+import { getDB } from "../../lib/mongodb";
+import { getSession } from "../../lib/session";
 import { EducationAdmin } from "../admin/page";
 
 export default async function Education() {

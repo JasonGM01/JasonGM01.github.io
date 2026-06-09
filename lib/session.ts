@@ -13,7 +13,7 @@ export async function createSession(user: {
     .setProtectedHeader({alg: "HS256"})
     .setIssuedAt()
     .setExpirationTime("1d")
-    .sign(secret!);
+    .sign(secret);
 
     const cookieStore = await cookies();
 
@@ -35,7 +35,7 @@ export async function getSession(){
     }
 
     try{
-        const {payload} = await jwtVerify(token, secret!);
+        const {payload} = await jwtVerify(token, secret);
         return payload;
     } catch{
         return null;

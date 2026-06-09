@@ -1,5 +1,5 @@
-import { getDB } from "@/lib/mongodb";
-import { getSession } from "@/lib/session";
+import { getDB } from "../../lib/mongodb";
+import { getSession } from "../../lib/session";
 import { ProjectAdmin } from "../admin/page";
 
 export default async function Projects() {
