@@ -1,0 +1,137 @@
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.main-page{
+  text-align: center;
+}
+
+.main{
+  display:block;
+  background-color: #ffffff;
+  padding: 8px 16px;
+  border-radius: 6px;
+  color: #0a0a0a;
+}
+
+.education-page,
+.skills-page,
+.projects-page,
+.contact-page,
+.hobbies-page,
+.users-page,
+.signup-page,
+.login-page,
+.about-page{
+  display: flex;
+  flex-direction: column;
+  padding: 5px;
+  text-align: center;
+  align-items: center;
+}
+
+.school-card,
+.skill-card,
+.project-card,
+.contact-card,
+.hobby-card,
+.about-card,
+.login-card,
+.signup-card{
+  border:2px solid #ff0000;
+  text-align: center;
+  color: #ffffff;
+  border-radius: 10px;
+  padding: 6px 6px 6px 6px;
+  margin: 6px;
+}
+
+.user-card{
+  border:2px solid #ff0000;
+  text-align: center;
+  color: #ffffff;
+  border-radius: 10px;
+  padding: 6px 6px 6px 6px;
+  margin: 6px;
+}
+
+.schools,
+.skills,
+.projects,
+.contacts,
+.hobbies,
+.users,
+.about{
+  display: flex;
+  flex-direction: row;
+}
+
+.signups form,
+.logins form,
+.admin-stuff form{
+  display: flex;
+  flex-direction: column;
+}
+
+.home-button,
+.education-button,
+.skill-button,
+.project-button,
+.contact-button,
+.user-button,
+.submit-button{
+  display:block;
+  border: 2px solid #ff0000;
+  background-color: #0a0a0a;
+  padding: 8px 16px;
+  border-radius: 6px;
+  margin: 8px;
+  color: #ffffff;
+}
+
+.education-button:hover,
+.skill-button:hover,
+.project-button:hover,
+.contact-button:hover,
+.home-button:hover,
+.user-button:hover,
+.submit-button:hover{
+  text-decoration: underline;
+  background-color: #ff0000;
+}
+
+.navbar-layout{
+  display: flex;
+  flex-direction: row;
+  justify-content: end;
+}
+
+.navi{
+  background-color: #ffffff;
+}
+
+.trademark{
+  text-align: center;
+}
+
+.admin-stuff{
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+}
