@@ -1,22 +1,29 @@
 import { getSession } from '@/lib/session';
-import { SkillsAdmin } from '../admin/page';
-
-type skill = {
-    "_id": number,
-    "skill": string,
-    "level": string,
-    "type": string
-}
+import { SkillAdmin } from '../admin/page';
+import { getDB } from '@/lib/mongodb';
 
 export default async function Skills() {
     const session = await getSession();
-    const res = await fetch("http://localhost:3000/api/skills", { cache: "no-store" });
-    const skills = await res.json();
-    const progSkills = skills.filter((skill: skill) => skill.type === "Programming");
-    const frameSkills = skills.filter((skill: skill) => skill.type === "Framework");
-    const DCSkills = skills.filter((skill: skill) => skill.type === "Database" || skill.type === "Cloud");
-    const speakSkills = skills.filter((skill: skill) => skill.type === "Speaking");
-    const autoSkills = skills.filter((skill: skill) => skill.type === "Automotive");
+    const db = await getDB();
+
+    const progSkills = await db.collection("skills").find({ type: "Programming" }).toArray();
+
+    const frameSkills = await db.collection("skills").find({ type: "Framework" }).toArray();
+
+    const DCSkills = await db
+        .collection("skills")
+        .find({
+            type: {
+                $in: [
+                    "Cloud",
+                    "Database"
+                ]
+            }
+        }).toArray();
+
+    const speakSkills = await db.collection("skills").find({ type: "Speaking" }).toArray();
+
+    const autoSkills = await db.collection("skills").find({ type: "Automotive" }).toArray();
 
     return (
         <div>
@@ -25,8 +32,8 @@ export default async function Skills() {
                 <ul className="skills">
                     <div className="skill-card">
                         <strong>Programming</strong>
-                        {progSkills.map((skill: skill) =>
-                            <div key={skill._id} >
+                        {progSkills.map((skill) =>
+                            <div key={skill._id.toString()}>
                                 <p>{skill.skill}</p>
                                 <p>Level: {skill.level}</p>
                                 <br />
@@ -36,8 +43,8 @@ export default async function Skills() {
 
                     <div className="skill-card">
                         <strong>Framework</strong>
-                        {frameSkills.map((skill: skill) =>
-                            <div key={skill._id}>
+                        {frameSkills.map((skill) =>
+                            <div key={skill._id.toString()}>
                                 <p>{skill.skill}</p>
                                 <p>Level: {skill.level}</p>
                                 <br />
@@ -47,8 +54,8 @@ export default async function Skills() {
 
                     <div className="skill-card">
                         <strong>Database/Cloud</strong>
-                        {DCSkills.map((skill: skill) =>
-                            <div key={skill._id}>
+                        {DCSkills.map((skill) =>
+                            <div key={skill._id.toString()}>
                                 <p>{skill.skill}</p>
                                 <p>Level: {skill.level}</p>
                                 <br />
@@ -58,8 +65,8 @@ export default async function Skills() {
 
                     <div className="skill-card">
                         <strong>Speaking</strong>
-                        {speakSkills.map((skill: skill) =>
-                            <div key={skill._id}>
+                        {speakSkills.map((skill) =>
+                            <div key={skill._id.toString()}>
                                 <p>{skill.skill}</p>
                                 <p>Level: {skill.level}</p>
                                 <br />
@@ -69,8 +76,8 @@ export default async function Skills() {
 
                     <div className="skill-card">
                         <strong>Automotive</strong>
-                        {autoSkills.map((skill: skill) =>
-                            <div key={skill._id}>
+                        {autoSkills.map((skill) =>
+                            <div key={skill._id.toString()}>
                                 <p>{skill.skill}</p>
                                 <p>Level: {skill.level}</p>
                                 <br />
@@ -82,7 +89,7 @@ export default async function Skills() {
                 {session?.role === "Admin" && (
                     <div>
                         <p><strong>Create New Skill:</strong></p>
-                        <SkillsAdmin />
+                        <SkillAdmin />
                     </div>
                 )}
             </div>

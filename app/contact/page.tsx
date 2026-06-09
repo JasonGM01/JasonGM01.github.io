@@ -1,13 +1,7 @@
 import { redirect } from 'next/navigation';
 import { getSession } from '@/lib/session';
 import { ContactAdmin } from '../admin/page';
-
-type contact = {
-    "_id": number,
-    "contact": string,
-    "type": string
-}
-
+import { getDB } from '@/lib/mongodb';
 
 export default async function Contact() {
     const session = await getSession();
@@ -17,14 +11,14 @@ export default async function Contact() {
         redirect("/login");
     }
 
-    const res = await fetch("http://localhost:3000/api/contacts", { cache: "no-store" });
-    const contacts = await res.json();
+    const db = await getDB();
+    const contacts = await db.collection("contacts").find({}).toArray();
     return (
         <div className="contact-page">
             <strong>You can contact me here:</strong>
             <ul className="contacts">
-                {contacts.map((contact: contact) =>
-                    <div key={contact._id} className="contact-card">
+                {contacts.map((contact) =>
+                    <div key={contact._id.toString()} className="contact-card">
                         <p><strong>{contact.type}</strong></p>
                         <p>{contact.type === "Linkedin"
                             ? (<a href={contact.contact}>{contact.contact}</a>)
@@ -35,7 +29,7 @@ export default async function Contact() {
 
             {session?.role === "Admin" && (
                 <div>
-                    <p><strong>Create new contact method: </strong></p>
+                    <p><strong>Create New Contact Method: </strong></p>
                     <ContactAdmin />
                 </div>
             )}
