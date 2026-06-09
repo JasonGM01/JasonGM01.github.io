@@ -9,5 +9,5 @@ const client = new MongoClient(uri);
 
 export async function getDB(){
     await client.connect();
-    return client.db("personal");
+    return client.db(process.env.MONGODB);
 }
