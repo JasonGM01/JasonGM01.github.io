@@ -1,3 +1,6 @@
+import { getSession } from '@/lib/session';
+import { SkillsAdmin } from '../admin/page';
+
 type skill = {
     "_id": number,
     "skill": string,
@@ -6,6 +9,7 @@ type skill = {
 }
 
 export default async function Skills() {
+    const session = await getSession();
     const res = await fetch("http://localhost:3000/api/skills", { cache: "no-store" });
     const skills = await res.json();
     const progSkills = skills.filter((skill: skill) => skill.type === "Programming");
@@ -17,6 +21,7 @@ export default async function Skills() {
     return (
         <div>
             <div className="skills-page">
+                <strong>Skills:</strong>
                 <ul className="skills">
                     <div className="skill-card">
                         <strong>Programming</strong>
@@ -35,29 +40,29 @@ export default async function Skills() {
                             <div key={skill._id}>
                                 <p>{skill.skill}</p>
                                 <p>Level: {skill.level}</p>
-                                <br/>
+                                <br />
                             </div>
                         )}
                     </div>
 
-                      <div className="skill-card">
+                    <div className="skill-card">
                         <strong>Database/Cloud</strong>
-                        {DCSkills.map((skill: skill) => 
+                        {DCSkills.map((skill: skill) =>
                             <div key={skill._id}>
                                 <p>{skill.skill}</p>
                                 <p>Level: {skill.level}</p>
-                                <br/>    
+                                <br />
                             </div>
                         )}
-                      </div>
+                    </div>
 
                     <div className="skill-card">
                         <strong>Speaking</strong>
-                        {speakSkills.map((skill: skill) => 
+                        {speakSkills.map((skill: skill) =>
                             <div key={skill._id}>
                                 <p>{skill.skill}</p>
                                 <p>Level: {skill.level}</p>
-                                <br/>
+                                <br />
                             </div>
                         )}
                     </div>
@@ -68,11 +73,18 @@ export default async function Skills() {
                             <div key={skill._id}>
                                 <p>{skill.skill}</p>
                                 <p>Level: {skill.level}</p>
-                                <br/>
+                                <br />
                             </div>
                         )}
                     </div>
                 </ul>
+
+                {session?.role === "Admin" && (
+                    <div>
+                        <p><strong>Create New Skill:</strong></p>
+                        <SkillsAdmin />
+                    </div>
+                )}
             </div>
         </div>
     )

@@ -37,7 +37,8 @@ body {
 .hobbies-page,
 .users-page,
 .signup-page,
-.login-page{
+.login-page,
+.about-page{
   display: flex;
   flex-direction: column;
   padding: 5px;
@@ -49,7 +50,10 @@ body {
 .skill-card,
 .project-card,
 .contact-card,
-.hobby-card{
+.hobby-card,
+.about-card,
+.login-card,
+.signup-card{
   border:2px solid #ff0000;
   text-align: center;
   color: #ffffff;
@@ -72,9 +76,17 @@ body {
 .projects,
 .contacts,
 .hobbies,
-.users{
+.users,
+.about{
   display: flex;
   flex-direction: row;
+}
+
+.signups form,
+.logins form,
+.admin-stuff form{
+  display: flex;
+  flex-direction: column;
 }
 
 .home-button,
@@ -82,7 +94,8 @@ body {
 .skill-button,
 .project-button,
 .contact-button,
-.user-button{
+.user-button,
+.submit-button{
   display:block;
   border: 2px solid #ff0000;
   background-color: #0a0a0a;
@@ -97,7 +110,8 @@ body {
 .project-button:hover,
 .contact-button:hover,
 .home-button:hover,
-.user-button:hover{
+.user-button:hover,
+.submit-button:hover{
   text-decoration: underline;
   background-color: #ff0000;
 }
@@ -114,4 +128,10 @@ body {
 
 .trademark{
   text-align: center;
+}
+
+.admin-stuff{
+  display:flex;
+  flex-direction: column;
+  align-items: center;
 }

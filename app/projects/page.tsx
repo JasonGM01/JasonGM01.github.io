@@ -16,6 +16,7 @@ export default async function Projects() {
     
     return (
             <div className="projects-page">
+                <strong>Projects:</strong>
                 <ul className="projects">
                     <div className="project-card">
                         <strong>Java Projects</strong>

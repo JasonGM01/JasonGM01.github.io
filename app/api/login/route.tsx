@@ -1,6 +1,7 @@
 import { NextResponse } from "next/server";
 import bcrypt from "bcryptjs";
 import { getDB } from "@/lib/mongodb";
+import { createSession } from "@/lib/session";
 
 export async function POST(req: Request){
     const {email, password} = await req.json();
@@ -33,15 +34,12 @@ export async function POST(req: Request){
         );
     }
 
-    return NextResponse.json(
-        {
-            message:"Login successful",
-            user: 
-            {
-                id: users._id.toString(),
-                userName: users.userName,
-                email: users.email
-            },
-        }
-    );
+    await createSession({
+        id: users._id.toString(),
+        userName: users.userName,
+        email: users.email,
+        role: users.role,
+    });
+
+    return NextResponse.json({message:"Login successful"});
 }

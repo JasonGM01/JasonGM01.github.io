@@ -3,7 +3,7 @@
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 
-export default function Navbar() {
+export default function Navbar({session}: {session: any}) {
     const pathName = usePathname();
 
     return (
@@ -39,7 +39,11 @@ export default function Navbar() {
                     </li>
                 )}
 
-                {pathName !== '/users' && (
+                {!session
+                &&pathName !== '/users' 
+                && pathName !== '/login' 
+                && pathName !== '/signup' 
+                && (
                     <li className="user-button">
                         <Link href="/users"><strong>Login/Signup</strong></Link>
                     </li>

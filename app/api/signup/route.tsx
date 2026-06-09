@@ -8,7 +8,7 @@ export async function POST(req: Request){
 
     if(!userName || !email || !password){
         return NextResponse.json(
-            {error: "Username, email, and password  are required"},
+            {error: "Username, email, and password are required"},
             {status: 400}
         );
     }
@@ -32,6 +32,7 @@ export async function POST(req: Request){
         userName,
         email,
         password: hashedPassword,
+        role: "Standard",
         createdAt: new Date(),
     });
 
