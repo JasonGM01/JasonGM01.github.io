@@ -11,7 +11,7 @@ design, and deployment.
 ## Live Demo
 
 [View the deployed
-website](https://jason-gm-01-github-q7lgb6s36-jasongm01s-projects.vercel.app/)
+website](https://jason-gm-01-github-io.vercel.app/)
 
 ## Features
 
