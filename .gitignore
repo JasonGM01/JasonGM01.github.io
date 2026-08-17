@@ -1,6 +1,0 @@
-.env.local
-.env*
-!.env.example
-
-.next/
-node_modules/
