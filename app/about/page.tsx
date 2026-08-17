@@ -21,9 +21,6 @@ export default function About(){
                     documentation. 
                     </p>
                     
-                    <p>
-                    What I couldn't figure out, I asked A.I for direction on how to approach it.
-                    </p>
                 </li>
             </ul>
         </div>
